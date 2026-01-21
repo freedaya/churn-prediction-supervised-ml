@@ -1,15 +1,15 @@
 # 📊 Customer Churn Prediction (Supervised ML)
 
 ## 👋 Hi there!
-This project focuses on predicting customer churn for a Telco company using **Supervised Machine Learning**.  
-The main goal is to identify customers who are likely to churn, so the company can take proactive actions to retain them.
+This project focuses on predicting customer churn for a Telco company using **Supervised Machine Learning**. The main goal is to identify customers who are likely to churn, so the company can take proactive actions to retain them.
 
-## 🎯 Assignment Objectives
-- Perform data preparation and cleaning
-- Conduct Exploratory Data Analysis (EDA)
-- Build at least **two supervised learning models** for classification
-- Evaluate models using metrics like Accuracy, Precision, Recall, F1-score, and AUC-ROC
-- Interpret the results to support business decisions
+## 🎯 Project Goals
+- Prepare and clean customer data for analysis  
+- Explore the dataset to uncover patterns and insights (EDA)  
+- Build multiple supervised learning models to predict customer churn  
+- Evaluate models using metrics like Recall, F1-score, and AUC-ROC  
+- Interpret model results to generate actionable business insights for customer retention  
+- Simulate Potential Impact of retention strategies using the best model
 
 ## 📂 Dataset Overview
 
@@ -70,8 +70,14 @@ The main goal is to identify customers who are likely to churn, so the company c
 - Trained models on training set and validated performance  
 
 ### 5️⃣ Model Evaluation
-- Metrics used: **Accuracy, Precision, Recall, F1-score, ROC-AUC**  
-- Compared models based on these metrics  
+- Metrics used: **Recall, F1-score, ROC-AUC**
+
+### 6️⃣ Potential Impact Simulation
+- Predicted churn probability for each customer using the best model
+- Segmented customers by risk:  
+  - High Risk → prob ≥ 0.7  
+  - Medium Risk → 0.4 ≤ prob < 0.7  
+  - Low Risk → prob < 0.4
 
 ## 📊 Analysis & Insights
 
@@ -83,7 +89,7 @@ The main goal is to identify customers who are likely to churn, so the company c
 ### 2️⃣ Training Set Results
 - **ROC-AUC:** highest for XGBoost, Logistic Regression, Random Forest → models can distinguish classes well  
 - **Recall:** highest for Logistic Regression and Decision Tree → detect positive cases effectively  
-- **F1-score:** highest for Logistic Regression and XGBoost → good balance between Recall and Precision  
+- **F1-score:** highest for Logistic Regression and XGBoost → good Recall  
 - **Conclusion:** Logistic Regression is the best performing model overall  
 
 ### 3️⃣ Test Set Results
@@ -91,3 +97,29 @@ The main goal is to identify customers who are likely to churn, so the company c
 - **Recall:** highest for Logistic Regression; Random Forest recall is very low  
 - **F1-score:** highest for Logistic Regression and Decision Tree  
 - **Conclusion:** Logistic Regression remains the best choice for deployment  
+
+### 4️⃣ Potential Impact Analysis
+- Predicted churn probability was used to estimate the effect of targeted retention actions.
+- Customers were grouped into risk segments to prioritize intervention.
+- **Estimated customers saved from churn: 61**
+
+This simulation helps the business focus retention efforts on customers with the
+highest churn risk and estimate the potential impact before execution.
+
+## 💡 Business Recommendations
+Based on the model insights, the company can take the following actions to reduce churn and improve retention:
+
+1. **Target High-Risk Customers**  
+   - Customers with high probability of churn should receive **personalized offers**, reminders, or loyalty incentives.  
+
+2. **Improve Engagement for New Customers**  
+   - Onboarding programs, tutorial emails, and welcome benefits can reduce early churn.  
+
+3. **Retention Campaigns for At-Risk Segments**  
+   - Offer **discounts, bundle promotions, or flexible contracts** to retain mid-tenure customers showing early churn signs.  
+
+4. **Focus on Contract & Payment Method Preferences**  
+   - Tailor promotions based on the most common contract types and payment methods to maximize retention impact.  
+
+5. **Upsell/Value Programs for Loyal Customers**  
+   - Reward long-term, low-churn customers with exclusive services (e.g., premium support, add-on services) to increase lifetime value.  
